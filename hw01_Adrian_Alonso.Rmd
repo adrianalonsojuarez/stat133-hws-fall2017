@@ -1,0 +1,209 @@
+---
+title: "HW01"
+author: "ADRIAN"
+date: "16 de septiembre de 2017"
+output: github_document
+---
+
+```{r}
+#load data file 
+load("data/nba2017-salary-points.RData")
+salaryinmillions <- salary / 1000000
+experience
+[1] "9"  "11" "6"  "R"  "9"  "5"  "4"  "2"  "R"  "6"  "1"  "3"  "2"  "1"  "4"  "10" "12" "11"
+ [19] "5"  "1"  "5"  "12" "13" "R"  "8"  "13" "5"  "13" "15" "5"  "2"  "5"  "1"  "7"  "7"  "R" 
+ [37] "R"  "4"  "10" "2"  "1"  "5"  "R"  "6"  "7"  "2"  "4"  "7"  "1"  "R"  "8"  "8"  "6"  "9" 
+ [55] "5"  "3"  "R"  "R"  "3"  "R"  "3"  "12" "8"  "11" "4"  "12" "R"  "14" "3"  "10" "3"  "10"
+ [73] "3"  "3"  "6"  "2"  "17" "4"  "4"  "R"  "3"  "8"  "4"  "1"  "9"  "R"  "3"  "8"  "12" "11"
+ [91] "R"  "7"  "1"  "6"  "6"  "5"  "11" "1"  "6"  "1"  "9"  "8"  "1"  "1"  "1"  "R"  "13" "3" 
+[109] "1"  "5"  "2"  "3"  "2"  "R"  "10" "8"  "4"  "8"  "4"  "7"  "9"  "1"  "1"  "6"  "R"  "R" 
+[127] "2"  "13" "7"  "1"  "4"  "4"  "12" "1"  "1"  "R"  "6"  "5"  "3"  "5"  "R"  "3"  "5"  "1" 
+[145] "5"  "4"  "1"  "1"  "3"  "1"  "4"  "2"  "5"  "9"  "11" "4"  "4"  "8"  "9"  "R"  "13" "R" 
+[163] "8"  "7"  "9"  "3"  "1"  "4"  "5"  "R"  "R"  "R"  "R"  "9"  "R"  "2"  "5"  "9"  "8"  "2" 
+[181] "2"  "4"  "8"  "7"  "R"  "1"  "5"  "R"  "R"  "4"  "R"  "R"  "7"  "1"  "8"  "R"  "1"  "2" 
+[199] "1"  "3"  "4"  "R"  "1"  "6"  "R"  "4"  "3"  "8"  "R"  "R"  "6"  "2"  "2"  "2"  "4"  "10"
+[217] "1"  "2"  "2"  "6"  "12" "R"  "13" "4"  "3"  "2"  "8"  "9"  "1"  "5"  "13" "R"  "11" "7" 
+[235] "13" "R"  "7"  "11" "R"  "R"  "3"  "9"  "1"  "5"  "2"  "10" "14" "7"  "15" "15" "2"  "R" 
+[253] "2"  "8"  "R"  "7"  "R"  "11" "1"  "4"  "8"  "1"  "12" "R"  "7"  "4"  "6"  "11" "R"  "11"
+[271] "8"  "R"  "10" "16" "8"  "8"  "18" "11" "6"  "5"  "13" "1"  "6"  "8"  "6"  "3"  "2"  "15"
+[289] "R"  "1"  "2"  "3"  "5"  "1"  "R"  "3"  "R"  "2"  "5"  "2"  "1"  "4"  "12" "5"  "8"  "R" 
+[307] "3"  "7"  "3"  "R"  "8"  "5"  "R"  "2"  "2"  "1"  "8"  "9"  "12" "3"  "18" "R"  "R"  "15"
+[325] "6"  "3"  "3"  "4"  "6"  "6"  "R"  "2"  "4"  "4"  "2"  "1"  "2"  "R"  "7"  "7"  "1"  "2" 
+[343] "R"  "12" "R"  "5"  "R"  "3"  "16" "1"  "8"  "4"  "8"  "6"  "4"  "1"  "R"  "7"  "6"  "4" 
+[361] "5"  "4"  "7"  "6"  "R"  "3"  "2"  "R"  "3"  "12" "18" "R"  "2"  "4"  "10" "R"  "2"  "R" 
+[379] "1"  "3"  "7"  "R"  "8"  "9"  "3"  "R"  "7"  "6"  "R"  "8"  "2"  "R"  "10" "R"  "7"  "7" 
+[397] "1"  "2"  "2"  "8"  "6"  "3"  "7"  "1"  "R"  "1"  "7"  "5"  "3"  "1"  "2"  "R"  "9"  "1" 
+[415] "R"  "R"  "2"  "2"  "1"  "12" "16" "9"  "2"  "4"  "6"  "2"  "1"  "3"  "5"  "R"  "1"  "R" 
+[433] "2"  "6"  "9"  "13" "R"  "11" "2"  "R"  "15"
+ ifelse(experience=="R", "0", experience)
+  [1] "9"  "11" "6"  "0"  "9"  "5"  "4"  "2"  "0"  "6"  "1"  "3"  "2"  "1"  "4"  "10" "12" "11"
+ [19] "5"  "1"  "5"  "12" "13" "0"  "8"  "13" "5"  "13" "15" "5"  "2"  "5"  "1"  "7"  "7"  "0" 
+ [37] "0"  "4"  "10" "2"  "1"  "5"  "0"  "6"  "7"  "2"  "4"  "7"  "1"  "0"  "8"  "8"  "6"  "9" 
+ [55] "5"  "3"  "0"  "0"  "3"  "0"  "3"  "12" "8"  "11" "4"  "12" "0"  "14" "3"  "10" "3"  "10"
+ [73] "3"  "3"  "6"  "2"  "17" "4"  "4"  "0"  "3"  "8"  "4"  "1"  "9"  "0"  "3"  "8"  "12" "11"
+ [91] "0"  "7"  "1"  "6"  "6"  "5"  "11" "1"  "6"  "1"  "9"  "8"  "1"  "1"  "1"  "0"  "13" "3" 
+[109] "1"  "5"  "2"  "3"  "2"  "0"  "10" "8"  "4"  "8"  "4"  "7"  "9"  "1"  "1"  "6"  "0"  "0" 
+[127] "2"  "13" "7"  "1"  "4"  "4"  "12" "1"  "1"  "0"  "6"  "5"  "3"  "5"  "0"  "3"  "5"  "1" 
+[145] "5"  "4"  "1"  "1"  "3"  "1"  "4"  "2"  "5"  "9"  "11" "4"  "4"  "8"  "9"  "0"  "13" "0" 
+[163] "8"  "7"  "9"  "3"  "1"  "4"  "5"  "0"  "0"  "0"  "0"  "9"  "0"  "2"  "5"  "9"  "8"  "2" 
+[181] "2"  "4"  "8"  "7"  "0"  "1"  "5"  "0"  "0"  "4"  "0"  "0"  "7"  "1"  "8"  "0"  "1"  "2" 
+[199] "1"  "3"  "4"  "0"  "1"  "6"  "0"  "4"  "3"  "8"  "0"  "0"  "6"  "2"  "2"  "2"  "4"  "10"
+[217] "1"  "2"  "2"  "6"  "12" "0"  "13" "4"  "3"  "2"  "8"  "9"  "1"  "5"  "13" "0"  "11" "7" 
+[235] "13" "0"  "7"  "11" "0"  "0"  "3"  "9"  "1"  "5"  "2"  "10" "14" "7"  "15" "15" "2"  "0" 
+[253] "2"  "8"  "0"  "7"  "0"  "11" "1"  "4"  "8"  "1"  "12" "0"  "7"  "4"  "6"  "11" "0"  "11"
+[271] "8"  "0"  "10" "16" "8"  "8"  "18" "11" "6"  "5"  "13" "1"  "6"  "8"  "6"  "3"  "2"  "15"
+[289] "0"  "1"  "2"  "3"  "5"  "1"  "0"  "3"  "0"  "2"  "5"  "2"  "1"  "4"  "12" "5"  "8"  "0" 
+[307] "3"  "7"  "3"  "0"  "8"  "5"  "0"  "2"  "2"  "1"  "8"  "9"  "12" "3"  "18" "0"  "0"  "15"
+[325] "6"  "3"  "3"  "4"  "6"  "6"  "0"  "2"  "4"  "4"  "2"  "1"  "2"  "0"  "7"  "7"  "1"  "2" 
+[343] "0"  "12" "0"  "5"  "0"  "3"  "16" "1"  "8"  "4"  "8"  "6"  "4"  "1"  "0"  "7"  "6"  "4" 
+[361] "5"  "4"  "7"  "6"  "0"  "3"  "2"  "0"  "3"  "12" "18" "0"  "2"  "4"  "10" "0"  "2"  "0" 
+[379] "1"  "3"  "7"  "0"  "8"  "9"  "3"  "0"  "7"  "6"  "0"  "8"  "2"  "0"  "10" "0"  "7"  "7" 
+[397] "1"  "2"  "2"  "8"  "6"  "3"  "7"  "1"  "0"  "1"  "7"  "5"  "3"  "1"  "2"  "0"  "9"  "1" 
+[415] "0"  "0"  "2"  "2"  "1"  "12" "16" "9"  "2"  "4"  "6"  "2"  "1"  "3"  "5"  "0"  "1"  "0" 
+[433] "2"  "6"  "9"  "13" "0"  "11" "2"  "0"  "15"
+newposition <- ifelse(newposition== "C", "center", newposition)
+ newposition <- ifelse(newposition== "PF", "power_fdw", newposition)
+ newposition <- ifelse(newposition== "SF", "small_fwd", newposition)
+ newposition <- ifelse(newposition== "SG", "small_fwd", newposition)
+ newposition <- ifelse(newposition== "PG", "power_fwd", newposition)
+  [1] "center"    "power_fdw" "small_fwd" "power_fwd" "small_fwd" "power_fwd" "small_fwd"
+  [8] "small_fwd" "small_fwd" "power_fdw" "power_fdw" "center"    "small_fwd" "power_fwd"
+ [15] "center"    "center"    "small_fwd" "power_fwd" "power_fdw" "center"    "small_fwd"
+ [22] "small_fwd" "small_fwd" "power_fwd" "power_fdw" "small_fwd" "power_fwd" "small_fwd"
+ [29] "small_fwd" "center"    "small_fwd" "small_fwd" "power_fwd" "small_fwd" "small_fwd"
+ [36] "power_fwd" "center"    "center"    "power_fwd" "center"    "small_fwd" "small_fwd"
+ [43] "power_fdw" "power_fdw" "power_fdw" "small_fwd" "small_fwd" "power_fwd" "power_fdw"
+ [50] "center"    "center"    "center"    "power_fwd" "center"    "power_fdw" "small_fwd"
+ [57] "small_fwd" "small_fwd" "power_fwd" "small_fwd" "power_fwd" "center"    "power_fdw"
+ [64] "power_fwd" "small_fwd" "power_fdw" "power_fwd" "small_fwd" "center"    "power_fdw"
+ [71] "power_fdw" "small_fwd" "small_fwd" "small_fwd" "center"    "power_fdw" "small_fwd"
+ [78] "center"    "small_fwd" "small_fwd" "power_fwd" "power_fdw" "power_fdw" "small_fwd"
+ [85] "power_fdw" "center"    "small_fwd" "power_fwd" "center"    "small_fwd" "power_fdw"
+ [92] "power_fwd" "power_fwd" "power_fdw" "small_fwd" "power_fdw" "small_fwd" "center"   
+ [99] "small_fwd" "power_fdw" "power_fdw" "small_fwd" "power_fdw" "power_fwd" "center"   
+[106] "small_fwd" "small_fwd" "small_fwd" "power_fwd" "small_fwd" "center"    "power_fwd"
+[113] "power_fdw" "small_fwd" "power_fwd" "center"    "small_fwd" "power_fwd" "center"   
+[120] "power_fdw" "power_fdw" "small_fwd" "small_fwd" "small_fwd" "power_fdw" "small_fwd"
+[127] "power_fwd" "center"    "small_fwd" "center"    "center"    "center"    "power_fwd"
+[134] "center"    "small_fwd" "power_fdw" "power_fwd" "power_fdw" "small_fwd" "small_fwd"
+[141] "small_fwd" "small_fwd" "power_fwd" "small_fwd" "power_fdw" "power_fwd" "power_fwd"
+[148] "power_fdw" "power_fdw" "center"    "small_fwd" "power_fdw" "power_fwd" "small_fwd"
+[155] "power_fdw" "small_fwd" "center"    "small_fwd" "power_fwd" "small_fwd" "small_fwd"
+[162] "power_fwd" "small_fwd" "power_fwd" "center"    "small_fwd" "power_fdw" "center"   
+[169] "power_fdw" "center"    "power_fdw" "small_fwd" "small_fwd" "small_fwd" "center"   
+[176] "small_fwd" "center"    "power_fwd" "power_fwd" "small_fwd" "power_fwd" "small_fwd"
+[183] "power_fdw" "small_fwd" "small_fwd" "small_fwd" "center"    "small_fwd" "center"   
+[190] "small_fwd" "power_fdw" "power_fdw" "small_fwd" "center"    "power_fwd" "center"   
+[197] "small_fwd" "small_fwd" "center"    "small_fwd" "power_fwd" "center"    "power_fwd"
+[204] "center"    "small_fwd" "power_fdw" "small_fwd" "center"    "small_fwd" "power_fwd"
+[211] "power_fwd" "small_fwd" "center"    "small_fwd" "power_fdw" "small_fwd" "small_fwd"
+[218] "small_fwd" "power_fwd" "power_fdw" "small_fwd" "center"    "center"    "power_fdw"
+[225] "small_fwd" "power_fdw" "center"    "small_fwd" "center"    "small_fwd" "small_fwd"
+[232] "small_fwd" "power_fwd" "power_fwd" "center"    "small_fwd" "small_fwd" "power_fdw"
+[239] "power_fdw" "power_fwd" "center"    "center"    "small_fwd" "small_fwd" "small_fwd"
+[246] "power_fdw" "small_fwd" "power_fwd" "center"    "power_fwd" "power_fwd" "center"   
+[253] "center"    "small_fwd" "power_fwd" "power_fwd" "power_fdw" "small_fwd" "center"   
+[260] "small_fwd" "power_fdw" "small_fwd" "small_fwd" "small_fwd" "small_fwd" "small_fwd"
+[267] "power_fdw" "power_fdw" "power_fdw" "power_fwd" "center"    "center"    "small_fwd"
+[274] "small_fwd" "small_fwd" "center"    "small_fwd" "power_fwd" "small_fwd" "small_fwd"
+[281] "power_fdw" "power_fwd" "power_fdw" "power_fwd" "small_fwd" "center"    "small_fwd"
+[288] "small_fwd" "power_fdw" "power_fwd" "small_fwd" "center"    "power_fwd" "power_fdw"
+[295] "small_fwd" "small_fwd" "power_fdw" "small_fwd" "center"    "small_fwd" "power_fdw"
+[302] "small_fwd" "power_fdw" "power_fwd" "power_fwd" "power_fwd" "center"    "power_fdw"
+[309] "small_fwd" "power_fwd" "power_fdw" "small_fwd" "center"    "small_fwd" "power_fdw"
+[316] "power_fdw" "center"    "power_fwd" "small_fwd" "small_fwd" "small_fwd" "power_fwd"
+[323] "small_fwd" "power_fdw" "small_fwd" "small_fwd" "small_fwd" "power_fwd" "power_fdw"
+[330] "small_fwd" "small_fwd" "center"    "small_fwd" "power_fdw" "power_fdw" "small_fwd"
+[337] "power_fwd" "small_fwd" "small_fwd" "power_fdw" "power_fwd" "small_fwd" "small_fwd"
+[344] "power_fwd" "power_fdw" "power_fdw" "small_fwd" "center"    "small_fwd" "center"   
+[351] "center"    "small_fwd" "small_fwd" "center"    "center"    "small_fwd" "power_fdw"
+[358] "small_fwd" "center"    "power_fdw" "small_fwd" "small_fwd" "power_fwd" "center"   
+[365] "power_fwd" "small_fwd" "power_fwd" "center"    "small_fwd" "power_fwd" "power_fdw"
+[372] "power_fdw" "center"    "power_fdw" "power_fwd" "power_fdw" "center"    "small_fwd"
+[379] "center"    "power_fwd" "small_fwd" "power_fwd" "power_fdw" "small_fwd" "small_fwd"
+[386] "small_fwd" "power_fwd" "small_fwd" "center"    "center"    "power_fwd" "small_fwd"
+[393] "small_fwd" "power_fdw" "power_fwd" "small_fwd" "center"    "power_fdw" "small_fwd"
+[400] "small_fwd" "center"    "power_fdw" "center"    "center"    "power_fwd" "power_fdw"
+[407] "small_fwd" "power_fwd" "small_fwd" "power_fwd" "small_fwd" "small_fwd" "small_fwd"
+[414] "power_fwd" "small_fwd" "center"    "small_fwd" "power_fdw" "power_fdw" "small_fwd"
+[421] "small_fwd" "small_fwd" "center"    "power_fdw" "center"    "power_fwd" "center"   
+[428] "center"    "small_fwd" "small_fwd" "small_fwd" "power_fdw" "small_fwd" "power_fwd"
+[435] "power_fdw" "small_fwd" "power_fdw" "power_fwd" "small_fwd" "power_fwd" "center"
+ table(frequency(newposition))
+
+1 
+1 
+plot(points, salaryinmillions, main = "POINTS AND SALARY")
+file:///C:/Users/ADRIÁN ALONSO JUÁREZ/Documents/UNIVERSIDAD/UC BERKELEY/stat 133/POINTS AND SALARY.png
+
+n <- length(player)
+xmean <- mean(points)
+ymean <- mean(salaryinmillions)
+varx <- var(points)
+vary <- var(salaryinmillions)
+sdx <- sd(points)
+sdy <- sd(salaryinmillions)
+covxy <- cov(points, salaryinmillions)
+corxy <- cor(points, salaryinmillions)
+
+ secondxmean <- 1/441 * sum(points)
+ secondymean <- 1/441 * sum(salaryinmillions)
+ secondvarx <- 1/(441-1)* sum(points - secondxmean)
+ secondvarx <- 1/(441-1)* sum(points - secondxmean)^2
+ secondsdx <- sqrt(varx)
+secondsdy <- sqrt(vary)
+ secondcvxy <- 1/440 *sum(points - xmean) * (salaryinmillions - ymean)
+ secondcorxy <- covxy/(sdx * sdy)
+
+B1 <- (cor(points, salaryinmillions)) * (sdy/sdx)
+B0 <- mean(salaryinmillions) - B1* mean(points)
+Y <- B0 + B1 * points 
+
+ summary(Y)
+     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+ 0.005145  1.286160  3.500000  6.187014  9.250000 30.963450 
+ 
+ #WHAT IS THE REGRESSION ECUATION? 
+# Y = B0 + B1 * points
+ 
+# The constant term in linear regression analysis seems to be such a simple thing. Also known as the y intercept, it is simply the value at which the fitted line crosses the y-axis.
+ #The slope of a regression line (b) represents the rate of change in y as x changes. Because y is dependent on x, the slope describes the predicted values of y given x. ... The slope of a regression line is used with a t-statistic to test the significance of a linear relationship between x and y.
+
+ #y = B0 + B1 * 0 = 1.90
+ #Y = B0 + B1 * 100 = 2.76
+ #Y = B0 + B1 * 500 = 6.18
+ #Y = B0 + B1 * 1000 = 10.46
+ #Y = B0 + B1 * 2000 = 19.02
+
+
+ plot(points, salaryinmillions, pch = 16, col = "blue", main = "POINTS AND SALARY PLOT", xlab = "POINTS", ylab = "SALARY IN MILLIONS")
+lm(salaryinmillions ~ points)
+
+Call:
+lm(formula = salaryinmillions ~ points)
+
+Coefficients:
+(Intercept)       points  
+   1.509886     0.008557  
+
+abline(lm(salaryinmillions ~ points))
+
+lines(lowess(points, salaryinmillions))
+
+residual <- (salaryinmillions) - (y) 
+RSS <- sum(residual^2)
+TSS <- sum((y - mean(salaryinmillions))^2)
+RSQUARED <- 1 - (RSS/TSS)
+
+         
+install.packages("scatterplot3d")
+scatterplot3d::scatterplot3d(points, experience, salaryinmillions, main = "SCATTERPLOT", xlab = "points", ylab = "experience", zlab = "salaryinmillions")
+
+#Yes, salary and experience are correlated as, in general, the higher the years playing, the higher the earning sof the player.
+
+boxplot(salaryinmillions ~ position)
+#It can be said that in general the mean salary is similar but the differences between those who play in the position C have more variation in the salary in comparisionth for exampl as PG. Some outliers gaining a lot of money in comparision with the other players appear in position P, SF and SG being a SF player the one who gain the most millions.
+
+#Comments and reflections: I was not able to make experince variable as an interger vector nor compute the frequencies qith the function table(). Moreover, I have not understood yet what is inline code. Nonetheless, I have been able to predict salaries using variable score, plotting the regression and the lowess line, create the Rsquared, the catterplot3d and the bloxplot after many hours trying to figure it out why i obtained some errors. Learning how to create code chuncks and ifelse for change values in the variables have been very useful. I want to thanks the GSI who were very helpful in the friday lab to sove many doubts. I spend a lot of time (6-9 hours) since I am really bad with computers and it was my first time programming in Rstudio. It was frustrating that a simple small mistake make everything wrong so i realized i needed to be extremely careful when writing. It was exciting finding how to use Rmd without the need f using the console and it produced me a great satisfaction when i was able to discover things by myself searching in google and trying new possibilities to overcome the difficulties (e.g. discovering ifelse function or understanding the boxplot meaning)
+
+```
